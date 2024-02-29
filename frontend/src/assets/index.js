@@ -1,1 +1,2 @@
-export { logoIcon, tagIcon, inputIcon} from "./icon";
+export { logoIcon, tagIcon } from "./icon";
+export { cardData } from './data';

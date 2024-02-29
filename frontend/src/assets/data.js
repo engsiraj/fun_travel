@@ -1,8 +1,26 @@
 export const cardData = [{
-    cityname: 'this is city name ',
-    placename: 'this is place name',
-    placedetailpara:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto eius aliquid laborum soluta ut sunt ad, sint nulla. Quasi, perferendis?',
-    imageurl: 'https://images.unsplash.com/photo-1699978721308-9274a72b688a?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJlYXV0aWZ1bCUyMGxhaG9yZXxlbnwwfHwwfHx8MA%3D%3D',
-    
-}]
+    id: 1,
+    placename: "Daata Darbar",
+    city: "Lahore",
+    placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    imageurl: "https://lh3.googleusercontent.com/p/AF1QipMLRNaI7prmnJAYTCMkblFCRN7Y5xWbqi11Geex=s680-w680-h510"
+}, {
+    id: 2,
+    placename: "Badshahi Mosque",
+    city: "Lahore",
+    placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    imageurl: "https://lh3.googleusercontent.com/p/AF1QipM-PLneiGlZyJ3-Meto263QdTtnbZSET8D5KiXT=s680-w680-h510"
+}, {
+    id: 3,
+    placename: "Minar-e-Pakistan",
+    city: "Lahore",
+    placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    imageurl: "https://www.arabnews.pk/sites/default/files/styles/n_670_395/public/2022/03/23/3136521-1832840510.jpeg?itok=G74MQwPP"
+}, {
+    id: 4,
+    placename: "Tomb of Shah Rukn - e - Alam",
+    city: "Multan",
+    placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
+    imageurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/800px-Shah_Rukn-e-Alam_Shrine.jpg"
 
+}]

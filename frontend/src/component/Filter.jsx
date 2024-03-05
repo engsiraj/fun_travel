@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-const Filter = ({click}) => {
+const Filter = ({ click, city, place }) => {
   return (
     <div>
       {" "}
@@ -11,10 +11,15 @@ const Filter = ({click}) => {
         >
           clear filter
         </a>
-        {""} selected filter
+        <span className="text-xs ms-2 font-medium">
+          {city}
+        </span>
+        <span className="text-xs ms-2 font-medium">
+          {place}
+        </span>
       </div>
     </div>
   );
-}
+};
 
-export default Filter
+export default Filter;

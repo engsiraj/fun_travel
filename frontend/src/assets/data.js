@@ -23,4 +23,5 @@ export const cardData = [{
     placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
     imageurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/800px-Shah_Rukn-e-Alam_Shrine.jpg"
 
-}]
+    }
+    ]

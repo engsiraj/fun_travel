@@ -10,8 +10,14 @@ import {
 import { Text } from "../library";
 import { cardData } from "../assets";
 import Popup from "../component/Popup";
+import {Login} from "../component";
 
 const Home = () => {
+  //for popups
+  const [isOpen, isSetOpen] = useState(false);
+  const openPopup = () => isSetOpen(true);
+  const closePopup = () => isSetOpen(false);
+
   //for suggestions
   const [suggestion, setSuggestion] = useState("");
   const placetoVisit = () => {
@@ -70,27 +76,25 @@ const Home = () => {
   ));
   return (
     <>
-      <div className="container mx-auto px-4">
-        <Navbar />
-        <Randplace click={placetoVisit} />
-        <Option
-          changePlace={handlePlaceChange}
-          changeCity={handleCityChange}
-          defCity={selectedCity}
-          City={cityList}
-          Place={places}
-        />
-        <Filter click={filterReset} city={selectedCity} place={selectedPlace} />
-        {suggestion}
-        {filterplaces}
-        <Text
-          className="text-xl my-6 uppercase font-semibold"
-          title="this simple title"
-        />
-        <div className="w-full grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 ">
-          {ListedPlaces}
-        </div>
-        <Popup />
+      <Navbar open={openPopup} />
+      <Popup open={isOpen} close={closePopup}><Login /></Popup>
+      <Randplace click={placetoVisit} />
+      <Option
+        changePlace={handlePlaceChange}
+        changeCity={handleCityChange}
+        defCity={selectedCity}
+        City={cityList}
+        Place={places}
+      />
+      <Filter click={filterReset} city={selectedCity} place={selectedPlace} />
+      {suggestion}
+      {filterplaces}
+      <Text
+        className="text-xl my-6 uppercase font-semibold"
+        title="this simple title"
+      />
+      <div className="w-full grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-5 ">
+        {ListedPlaces}
       </div>
     </>
   );

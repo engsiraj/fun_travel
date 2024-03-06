@@ -1,9 +1,11 @@
-import {Home} from "./pages";
+import {Detailpage, Home} from "./pages";
 
 function App() {
   return (
     <>
-      <Home />
+      <div className="container mx-auto px-4">
+        <Detailpage />
+      </div>
     </>
   );
 }

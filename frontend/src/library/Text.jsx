@@ -1,6 +1,6 @@
 const Text = ({title,className}) => {
   return (
-    <div className={className}>{title}</div>
+    <p className={className}>{title}</p>
   )
 }
 

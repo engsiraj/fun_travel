@@ -1,21 +1,18 @@
-import { useState } from "react";
-
-const Popup = () => {
-  const [isOpen, isSetOpen] = useState(false);
-  const openPopup = () => isSetOpen(true);
-  const closePopup = () => isSetOpen(false);
+import { logoIcon, crossIcon } from "../assets";
+const Popup = ({ open, close, children }) => {
   return (
     <div>
-      <button className="btn-blue" onClick={openPopup}>open</button>
-      {isOpen && (
-        <div className="fixed top-[50%] left-[50%]  translate-x-[-50%] translate-y-[-50%] p-[20px] border-2 bg-white rounded">
-          <div className="text-center">
-            <p className="text-2xl">
-              Lorem ipsum 
-            </p>
-           <div className="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et impedit unde doloribus consectetur a saepe cumque pariatur magni nulla voluptatum.</div>
-            <button className="btn-blue" onClick={closePopup}>close</button>
+      {open && (
+        <div className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-4 bg-white rounded shadow-lg">
+          <div className="flex justify-between">
+            <div className="flex justify-center items-center  text-2xl font-medium ">
+              {logoIcon} <span className="mt-[-10px]">fun travel</span>
+            </div>
+            <button className="" onClick={close}>
+              {crossIcon}
+            </button>
           </div>
+          {children}
         </div>
       )}
     </div>

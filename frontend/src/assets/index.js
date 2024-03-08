@@ -1,2 +1,2 @@
-export { logoIcon, tagIcon ,crossIcon} from "./icon";
-export { cardData } from './data';
+export { logoIcon, tagIcon, crossIcon } from "./icon";
+export { fetchItems, createItem, deleteItem, updateItem, handleLogin } from './data';

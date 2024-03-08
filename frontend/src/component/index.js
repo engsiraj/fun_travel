@@ -9,5 +9,6 @@ import AddPlace from "./AddPlace";
 import Popup from './Popup';
 import PlacesList from "./PlacesList";
 import UpdatePlace from "./UpdatePlace";
+import { DataContext } from "./Api";
 
-export { Card, Option, Navbar, Suggestion, Randplace, Filter, Login, AddPlace, Popup, PlacesList,UpdatePlace }
+export { Card, Option, Navbar, Suggestion, Randplace, Filter, Login, AddPlace, Popup, PlacesList, UpdatePlace, DataContext }

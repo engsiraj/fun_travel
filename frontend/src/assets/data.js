@@ -1,27 +1,74 @@
-export const cardData = [{
-    id: 1,
-    placename: "Daata Darbar",
-    city: "Lahore",
-    placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-    imageurl: "https://lh3.googleusercontent.com/p/AF1QipMLRNaI7prmnJAYTCMkblFCRN7Y5xWbqi11Geex=s680-w680-h510"
-}, {
-    id: 2,
-    placename: "Badshahi Mosque",
-    city: "Lahore",
-    placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-    imageurl: "https://lh3.googleusercontent.com/p/AF1QipM-PLneiGlZyJ3-Meto263QdTtnbZSET8D5KiXT=s680-w680-h510"
-}, {
-    id: 3,
-    placename: "Minar-e-Pakistan",
-    city: "Lahore",
-    placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-    imageurl: "https://www.arabnews.pk/sites/default/files/styles/n_670_395/public/2022/03/23/3136521-1832840510.jpeg?itok=G74MQwPP"
-}, {
-    id: 4,
-    placename: "Tomb of Shah Rukn - e - Alam",
-    city: "Multan",
-    placepara: "Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
-    imageurl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Shah_Rukn-e-Alam_Shrine.jpg/800px-Shah_Rukn-e-Alam_Shrine.jpg"
+import axios from 'axios';
 
+const BASE_URL = 'http://127.0.0.1:8000/';
+
+export const fetchItems = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/api/`);
+        return response.data
+    } catch (error) {
+        console.error('Error fetching items:', error);
+        throw error; // Re-throw error for handling in components
     }
-    ]
+};
+
+
+export const createItem = async (values, closePopup) => {
+    try {
+        const response = await axios.post(`${BASE_URL}/api/`, { values });
+        closePopup(true);
+        return response.data;
+    } catch (error) {
+        console.error('Error creating item:', error);
+        throw error;
+    }
+};
+
+
+export const updateItem = async (id, updatedData) => {
+    try {
+        const response = await axios.put(`${BASE_URL}/api/${id}/`,updatedData);
+        console.log('updated data');
+        return response.data;
+    } catch (error) {
+        console.error('Error updating item:', error);
+        throw error;
+    }
+};
+
+
+export const deleteItem = async (id) => {
+    try {
+        await axios.delete(`${BASE_URL}/api/${id}`);
+    } catch (error) {
+        console.error('Error deleting item:', error);
+        throw error;
+    }
+};
+
+
+export const handleLogin = async (username, password, navigate) => {
+    try {
+        const response = await fetch(`${BASE_URL}/api/login/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password,
+            }),
+        });
+
+        if (response.ok) {
+            navigate('dashboard')
+        } else {
+            console.error("Login failed");
+        }
+    } catch (error) {
+        console.error("Error during login:", error);
+    }
+};
+
+
+

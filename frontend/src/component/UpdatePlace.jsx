@@ -1,5 +1,7 @@
 import { updateItem } from "../assets";
-const UpdatePlace = ({ updatedData, handleChange }) => {
+
+const UpdatePlace = ({ updatedData, handleChange, close }) => {
+  
   return (
     <>
       <div className="my-3 w-[310px]">
@@ -46,7 +48,9 @@ const UpdatePlace = ({ updatedData, handleChange }) => {
           </div>
         </div>
         <button
-          onClick={() => updateItem(updatedData.id, updatedData)}
+          onClick={() =>
+            updateItem(updatedData.id, updatedData, close)
+          }
           className="mt-4 w-full block rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           update

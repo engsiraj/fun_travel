@@ -77,7 +77,11 @@ const Detailpage = () => {
       </Popup>
       <PlacesList openUp={handleClick} />
       <Popup open={isOpenUp} close={closePopupUp}>
-        <UpdatePlace handleChange={handleChange} updatedData={updatedData} />
+        <UpdatePlace
+          handleChange={handleChange}
+          updatedData={updatedData}
+          close={closePopup}
+        />
       </Popup>
     </>
   );

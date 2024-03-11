@@ -13,9 +13,9 @@ export const fetchItems = async () => {
 };
 
 
-export const createItem = async (values, closePopup) => {
+export const createItem = async (values, closePopup,) => {
     try {
-        const response = await axios.post(`${BASE_URL}/api/`, { values });
+        const response = await axios.post(`${BASE_URL}/api/`, values);
         closePopup(true);
         return response.data;
     } catch (error) {
@@ -25,10 +25,10 @@ export const createItem = async (values, closePopup) => {
 };
 
 
-export const updateItem = async (id, updatedData) => {
+export const updateItem = async (id, updatedData, close) => {
     try {
-        const response = await axios.put(`${BASE_URL}/api/${id}/`,updatedData);
-        console.log('updated data');
+        const response = await axios.put(`${BASE_URL}/api/${id}/`, updatedData);
+        close(true);
         return response.data;
     } catch (error) {
         console.error('Error updating item:', error);
@@ -61,6 +61,8 @@ export const handleLogin = async (username, password, navigate) => {
         });
 
         if (response.ok) {
+            const data = await response.json();
+            console.log('Token:', data.token);
             navigate('dashboard')
         } else {
             console.error("Login failed");

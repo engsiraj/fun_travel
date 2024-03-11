@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { createItem } from "../assets";
 
+
 const AddPlace = ({ closePopup }) => {
+
   const [values, setValues] = useState({});
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -60,7 +62,7 @@ const AddPlace = ({ closePopup }) => {
           </div>
         </div>
         <button
-          onClick={()=>createItem(values, closePopup)}
+          onClick={() => createItem(values, closePopup)}
           type="button"
           className="mt-4 w-full block rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >

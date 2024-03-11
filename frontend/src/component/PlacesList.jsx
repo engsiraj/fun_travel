@@ -1,11 +1,11 @@
+import { deleteItem } from "../assets";
 import { useContext } from "react";
 import { DataContext } from "./Api";
-import { deleteItem } from "../assets";
 const PlacesList = ({ openUp }) => {
   const { setIsUpdated, place } = useContext(DataContext);
   const handleDelete = (id) => {
     if (window.confirm("Are you sure ?")) {
-      deleteItem(id).then(() => setIsUpdated(true));
+      deleteItem(id).then(setIsUpdated(true));
     }
   };
 

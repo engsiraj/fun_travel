@@ -2,7 +2,7 @@ import React from "react";
 
 const Suggestion = ({ imageLink, place, city }) => {
   return (
-    <div>
+    <div className="">
       <img
         className=" w-full rounded-lg"
         src={imageLink}
